@@ -5,10 +5,27 @@ plugins {
 group 'me.dags'
 version '0.1-SNAPSHOT'
 
+configurations {
+    shade
+}
+
 repositories {
     maven { url 'https://jitpack.io' }
 }
 
 dependencies {
     compile 'com.github.dags-:cfg:0.4-SNAPSHOT'
+    shade 'com.github.dags-:cfg:0.4-SNAPSHOT'
+}
+
+def shadeDependencies = {
+    configurations.shade.collect{
+        it.directory ? it : zipTree(it)
+    }.each {
+        from it
+    }
+}
+
+jar {
+    with shadeDependencies
 }
