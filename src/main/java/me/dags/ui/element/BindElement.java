@@ -32,6 +32,7 @@ public class BindElement extends ValueElement<Integer, Integer> {
 
         if (value < 0) {
             int button = -value;
+            button -= Platform.getInput().mouseOffset();
             text = String.format(mouse, button);
         } else if (value > 0) {
             String name = Platform.getInput().keyName(value);
@@ -47,6 +48,7 @@ public class BindElement extends ValueElement<Integer, Integer> {
     public boolean mousePress(int mx, int my, int button, int modifiers) {
         if (contains(mx, my)) {
             if (isActive()) {
+                button += Platform.getInput().mouseOffset();
                 setValue(-button);
                 setActive(false);
                 setPressed(false);

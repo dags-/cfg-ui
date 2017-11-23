@@ -5,7 +5,7 @@ package me.dags.ui.platform;
  */
 public class Platform {
 
-    private static Input input = new Keyboard();
+    private static Input input = new BuiltIn();
 
     public static Input getInput() {
         return input;

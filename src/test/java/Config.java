@@ -6,7 +6,6 @@ import me.dags.ui.platform.Platform;
 /**
  * @author dags <dags@dags.me>
  */
-@Theme(animation = @Animation(inc = 0.001F))
 @Insets(left = 0.5F, right = 0.5F, top = 0F, bottom = 0F)
 @Section(pos = Layout.LEFT, grid = {1F, 0.3F})
 @Section(pos = Layout.RIGHT)

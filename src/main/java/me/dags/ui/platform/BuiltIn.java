@@ -5,7 +5,7 @@ import java.awt.event.KeyEvent;
 /**
  * @author dags <dags@dags.me>
  */
-public class Keyboard implements Input {
+public class BuiltIn implements Input {
 
     @Override
     public boolean isEscape(int code) {

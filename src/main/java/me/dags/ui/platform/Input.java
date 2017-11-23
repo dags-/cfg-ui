@@ -23,13 +23,13 @@ public interface Input {
 
     boolean isUndefined(char c);
 
-    default boolean isSpace(int code) {
-        return code == ' ';
-    }
-
     String keyName(int code);
 
     int keyCode(char c);
 
     int shiftCode();
+
+    default int mouseOffset() {
+        return 0;
+    }
 }
