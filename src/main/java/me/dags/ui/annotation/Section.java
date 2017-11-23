@@ -31,5 +31,5 @@ public @interface Section {
 
     Align vAlign() default Align.CENTER;
 
-    Theme theme() default @Theme(secondary = 0x00000000);
+    Theme theme() default @Theme(secondary = 0xCC000000);
 }
