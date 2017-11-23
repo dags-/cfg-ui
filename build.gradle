@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+group 'me.dags'
+version '0.1-SNAPSHOT'
+
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    compile 'com.github.dags-:cfg:0.4-SNAPSHOT'
+}

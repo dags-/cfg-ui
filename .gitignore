@@ -13,6 +13,7 @@
 build/
 .idea/
 .gradle/
+test/
 
 # Package Files #
 *.war
