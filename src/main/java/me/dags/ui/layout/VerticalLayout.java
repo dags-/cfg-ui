@@ -1,6 +1,6 @@
 package me.dags.ui.layout;
 
-import me.dags.ui.Style;
+import me.dags.ui.Alignment;
 import me.dags.ui.Theme;
 import me.dags.ui.element.Element;
 import me.dags.ui.platform.RenderContext;
@@ -17,7 +17,7 @@ public class VerticalLayout<T> extends BaseLayout<T> {
     private int[] heights;
     private int[] tops;
 
-    public VerticalLayout(Style style, Theme theme, float[] cellHeights, int cellWidth) {
+    public VerticalLayout(Alignment style, Theme theme, float[] cellHeights, int cellWidth) {
         super(style, theme);
         this.cellWidth = cellWidth;
         this.cellHeights = cellHeights;

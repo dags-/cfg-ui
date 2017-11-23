@@ -1,6 +1,6 @@
 package me.dags.ui.processor;
 
-import me.dags.ui.Style;
+import me.dags.ui.Alignment;
 import me.dags.ui.Theme;
 import me.dags.ui.annotation.Label;
 import me.dags.ui.element.Element;
@@ -27,7 +27,7 @@ public interface ElementProcessor<T extends Annotation> {
         int col = label.col();
         int row = label.row();
         Theme theme = new Theme(parentTheme, label.theme());
-        Style style = new Style(label.hPad(), label.vPad(), label.hAlign(), label.vAlign());
+        Alignment style = new Alignment(label.hPad(), label.vPad(), label.hAlign(), label.vAlign());
         return new LabelElement(style, theme, label.format(), col, row, element);
     }
 }

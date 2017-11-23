@@ -1,6 +1,6 @@
 package me.dags.ui.element;
 
-import me.dags.ui.Style;
+import me.dags.ui.Alignment;
 import me.dags.ui.Theme;
 import me.dags.ui.platform.Keys;
 import me.dags.ui.platform.Platform;
@@ -13,14 +13,15 @@ public class BindElement extends ValueElement<Integer, Integer> {
 
     private static final String NONE = "NONE";
 
-    private final Animator highlighter = new Animator();
+    private final Animator highlighter;
     private final String mouse;
     private final String key;
 
     private String text = NONE;
 
-    public BindElement(Style style, Theme theme, String mouse, String key, int column, int row, int defaultVal) {
+    public BindElement(Alignment style, Theme theme, String mouse, String key, int column, int row, int defaultVal) {
         super(style, theme, column, row, defaultVal, InputMapper.integer());
+        this.highlighter = new Animator(theme.animation);
         this.mouse = mouse;
         this.key = key;
     }

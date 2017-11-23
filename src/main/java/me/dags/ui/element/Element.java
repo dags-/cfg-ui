@@ -1,6 +1,6 @@
 package me.dags.ui.element;
 
-import me.dags.ui.Style;
+import me.dags.ui.Alignment;
 import me.dags.ui.Theme;
 import me.dags.ui.platform.RenderContext;
 
@@ -41,7 +41,7 @@ public interface Element<T> {
 
     }
 
-    Style getStyle();
+    Alignment getStyle();
 
     default Theme getTheme() {
         return Theme.DEFAULT;

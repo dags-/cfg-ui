@@ -1,6 +1,6 @@
 package me.dags.ui.layout;
 
-import me.dags.ui.Style;
+import me.dags.ui.Alignment;
 import me.dags.ui.annotation.Insets;
 import me.dags.ui.annotation.Section;
 import me.dags.ui.element.Element;
@@ -22,7 +22,7 @@ public class BorderLayout extends BaseLayout {
     private final Map<Layout, BaseLayout<?>> elements = new LinkedHashMap<>();
 
     public BorderLayout(Insets borders, Section[] sections) {
-        super(new Style(), me.dags.ui.Theme.DEFAULT);
+        super(new Alignment(), me.dags.ui.Theme.DEFAULT);
         this.borders = borders;
         this.header = getLayout(Layout.TOP, sections);
         this.footer = getLayout(Layout.BOTTOM, sections);
@@ -115,7 +115,7 @@ public class BorderLayout extends BaseLayout {
                 continue;
             }
 
-            Style style = Style.of(section);
+            Alignment style = Alignment.of(section);
             me.dags.ui.Theme theme = new me.dags.ui.Theme(section.theme());
             BaseLayout layout = newLayout(section.vert(), style, theme, section.size(), section.grid());
             elements.put(pos, layout);
@@ -123,12 +123,12 @@ public class BorderLayout extends BaseLayout {
         }
 
         boolean vertical = pos == Layout.LEFT || pos == Layout.RIGHT;
-        BaseLayout layout = newLayout(vertical, new Style(), me.dags.ui.Theme.DEFAULT, BaseLayout.DEFAULT_CELL_SIZE);
+        BaseLayout layout = newLayout(vertical, new Alignment(), me.dags.ui.Theme.DEFAULT, BaseLayout.DEFAULT_CELL_SIZE);
         elements.put(pos, layout);
         return layout;
     }
 
-    private BaseLayout newLayout(boolean vertical, Style style, me.dags.ui.Theme theme, int cellSize, float... grid) {
+    private BaseLayout newLayout(boolean vertical, Alignment style, me.dags.ui.Theme theme, int cellSize, float... grid) {
         if (vertical) {
             return new VerticalLayout(style, theme, grid, cellSize);
         }

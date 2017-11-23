@@ -1,6 +1,6 @@
 package me.dags.ui.processor;
 
-import me.dags.ui.Style;
+import me.dags.ui.Alignment;
 import me.dags.ui.Theme;
 import me.dags.ui.annotation.Cycle;
 import me.dags.ui.element.CycleElement;
@@ -32,7 +32,7 @@ public class CycleProcessor implements ElementProcessor<Cycle> {
     @Override
     public Element<?> getElement(Field field, Cycle data, Theme theme) {
         Object[] values = field.getType().getEnumConstants();
-        Style style = new Style(data.hPad(), data.vPad(), data.hAlign(), data.vAlign());
+        Alignment style = new Alignment(data.hPad(), data.vPad(), data.hAlign(), data.vAlign());
         return new CycleElement<>(style, theme, data.format(), data.col(), data.row(), values);
     }
 }

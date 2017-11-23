@@ -1,6 +1,6 @@
 package me.dags.ui.layout;
 
-import me.dags.ui.Style;
+import me.dags.ui.Alignment;
 import me.dags.ui.Theme;
 import me.dags.ui.element.Element;
 import me.dags.ui.platform.RenderContext;
@@ -16,7 +16,7 @@ public class HorizontalLayout<T> extends BaseLayout<T> {
     private int[] widths;
     private int[] lefts;
 
-    HorizontalLayout(Style style, Theme theme, float[] cellWidths, int cellHeight) {
+    HorizontalLayout(Alignment style, Theme theme, float[] cellWidths, int cellHeight) {
         super(style, theme);
         this.cellHeight = cellHeight;
         this.cellWidths = cellWidths;

@@ -1,6 +1,6 @@
 package me.dags.ui.processor;
 
-import me.dags.ui.Style;
+import me.dags.ui.Alignment;
 import me.dags.ui.Theme;
 import me.dags.ui.annotation.Bind;
 import me.dags.ui.element.BindElement;
@@ -31,7 +31,7 @@ public class BindProcessor implements ElementProcessor<Bind> {
 
     @Override
     public Element<?> getElement(Field field, Bind data, Theme theme) {
-        Style style = new Style(data.hPad(), data.vPad(), data.hAlign(), data.vAlign());
+        Alignment style = new Alignment(data.hPad(), data.vPad(), data.hAlign(), data.vAlign());
         return new BindElement(style, theme, data.mouse(), data.key(), data.col(), data.row(), data.def());
     }
 }

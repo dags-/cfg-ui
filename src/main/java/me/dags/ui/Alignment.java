@@ -5,21 +5,21 @@ import me.dags.ui.annotation.Section;
 /**
  * @author dags <dags@dags.me>
  */
-public class Style {
+public class Alignment {
 
     public final float hPad;
     public final float vPad;
     public final Align hAlign;
     public final Align vAlign;
 
-    public Style(float hPad, float vPad, Align hAlign, Align vAlign) {
+    public Alignment(float hPad, float vPad, Align hAlign, Align vAlign) {
         this.hPad = hPad;
         this.vPad = vPad;
         this.hAlign = hAlign;
         this.vAlign = vAlign;
     }
 
-    public Style() {
+    public Alignment() {
         this(0F, 0F, Align.CENTER, Align.CENTER);
     }
 
@@ -53,7 +53,7 @@ public class Style {
         return top + padding;
     }
 
-    public static Style of(Section section) {
-        return new Style(section.hPad(), section.vPad(), section.hAlign(), section.vAlign());
+    public static Alignment of(Section section) {
+        return new Alignment(section.hPad(), section.vPad(), section.hAlign(), section.vAlign());
     }
 }

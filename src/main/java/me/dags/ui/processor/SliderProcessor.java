@@ -1,6 +1,6 @@
 package me.dags.ui.processor;
 
-import me.dags.ui.Style;
+import me.dags.ui.Alignment;
 import me.dags.ui.Theme;
 import me.dags.ui.annotation.Slider;
 import me.dags.ui.element.Element;
@@ -35,11 +35,11 @@ public class SliderProcessor implements ElementProcessor<Slider> {
 
     @Override
     public Element<?> getElement(Field field, Slider data, Theme theme) {
-        Style style = new Style(data.hPad(), data.vPad(), data.hAlign(), data.vAlign());
+        Alignment style = new Alignment(data.hPad(), data.vPad(), data.hAlign(), data.vAlign());
         return newSlider(field.getType(), data, style, theme);
     }
 
-    private SliderElement<?> newSlider(Class<?> type, Slider slider, Style style, me.dags.ui.Theme theme) {
+    private SliderElement<?> newSlider(Class<?> type, Slider slider, Alignment style, me.dags.ui.Theme theme) {
         int col = slider.col();
         int row = slider.row();
         boolean vertical = slider.vertical();

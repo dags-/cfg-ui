@@ -1,6 +1,6 @@
 package me.dags.ui.element;
 
-import me.dags.ui.Style;
+import me.dags.ui.Alignment;
 import me.dags.ui.Theme;
 import me.dags.ui.platform.Keys;
 import me.dags.ui.platform.RenderContext;
@@ -10,12 +10,13 @@ import me.dags.ui.platform.RenderContext;
  */
 public class CycleElement<T> extends ValueElement<Integer, T> {
 
-    private final Animator highlighter = new Animator();
+    private final Animator highlighter;
     private final int length;
     private final String format;
 
-    public CycleElement(Style style, Theme theme, String format, int column, int row, T[] values) {
+    public CycleElement(Alignment style, Theme theme, String format, int column, int row, T[] values) {
         super(style, theme, column, row, values[0], InputMapper.option(values));
+        this.highlighter = new Animator(theme.animation);
         this.format = format;
         this.length = values.length;
     }

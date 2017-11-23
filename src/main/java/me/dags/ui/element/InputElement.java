@@ -1,6 +1,6 @@
 package me.dags.ui.element;
 
-import me.dags.ui.Style;
+import me.dags.ui.Alignment;
 import me.dags.ui.Theme;
 import me.dags.ui.platform.Keys;
 import me.dags.ui.platform.Platform;
@@ -14,12 +14,13 @@ public class InputElement<T> extends ValueElement<StringBuilder, T> {
     private static final long BLINK = 500L;
     private static final long TOTAL = BLINK * 2;
 
-    private final Animator highlighter = new Animator();
+    private final Animator highlighter;
     private long time = 0L;
     private int cursor = 0;
 
-    public InputElement(Style style, Theme theme, int column, int row, T defaultVal, InputMapper<StringBuilder, T> mapper) {
+    public InputElement(Alignment style, Theme theme, int column, int row, T defaultVal, InputMapper<StringBuilder, T> mapper) {
         super(style, theme, column, row, defaultVal, mapper);
+        highlighter = new Animator(theme.animation);
         cursor = getRawValue().length() - 1;
     }
 

@@ -22,7 +22,7 @@ public class UIMapper<T> extends BaseElement<Object> {
     private final Map<String[], Element<?>> mappings;
 
     UIMapper(Mapper<T> mapper, Element<?> root, Map<String[], Element<?>> mappings) {
-        super(new Style(), Theme.DEFAULT, 0, 0);
+        super(new Alignment(), Theme.DEFAULT, 0, 0);
         this.mapper = mapper;
         this.root = root;
         this.mappings = Collections.unmodifiableMap(new HashMap<>(mappings));

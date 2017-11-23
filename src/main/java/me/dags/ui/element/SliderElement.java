@@ -1,6 +1,6 @@
 package me.dags.ui.element;
 
-import me.dags.ui.Style;
+import me.dags.ui.Alignment;
 import me.dags.ui.Theme;
 import me.dags.ui.platform.Keys;
 import me.dags.ui.platform.RenderContext;
@@ -21,7 +21,7 @@ public class SliderElement<T> extends ValueElement<Float, T> {
     private int slideWidth;
     private int slideHeight;
 
-    public SliderElement(Style style, Theme theme, int column, int row, boolean showTick, boolean vertical, boolean invert, T defaultVal, InputMapper<Float, T> mapper) {
+    public SliderElement(Alignment style, Theme theme, int column, int row, boolean showTick, boolean vertical, boolean invert, T defaultVal, InputMapper<Float, T> mapper) {
         super(style, theme, column, row, defaultVal, mapper);
         slidePadX = 4;
         slidePadY = 2;

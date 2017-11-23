@@ -1,6 +1,6 @@
 package me.dags.ui.processor;
 
-import me.dags.ui.Style;
+import me.dags.ui.Alignment;
 import me.dags.ui.Theme;
 import me.dags.ui.annotation.Num;
 import me.dags.ui.element.Element;
@@ -33,7 +33,7 @@ public class NumberProcessor implements ElementProcessor<Num> {
 
     @Override
     public Element<?> getElement(Field field, Num number, Theme theme) {
-        Style style = new Style(number.hPad(), number.vPad(), number.hAlign(), number.vAlign());
+        Alignment style = new Alignment(number.hPad(), number.vPad(), number.hAlign(), number.vAlign());
         InputMapper<StringBuilder, Number> mapper = InputMapper.numberParser(number.def(), num(field.getType()));
         return new NumberInputElement<>(style, theme, number.col(), number.row(), number.def(), mapper);
     }

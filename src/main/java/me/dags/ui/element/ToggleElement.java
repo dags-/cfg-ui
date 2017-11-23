@@ -1,6 +1,6 @@
 package me.dags.ui.element;
 
-import me.dags.ui.Style;
+import me.dags.ui.Alignment;
 import me.dags.ui.Theme;
 
 /**
@@ -8,7 +8,7 @@ import me.dags.ui.Theme;
  */
 public class ToggleElement extends CycleElement<Boolean> {
 
-    public ToggleElement(Style style, Theme theme, String format, int column, int row) {
+    public ToggleElement(Alignment style, Theme theme, String format, int column, int row) {
         super(style, theme, format, column, row, new Boolean[]{true, false});
     }
 }

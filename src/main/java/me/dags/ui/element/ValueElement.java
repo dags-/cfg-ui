@@ -1,6 +1,6 @@
 package me.dags.ui.element;
 
-import me.dags.ui.Style;
+import me.dags.ui.Alignment;
 import me.dags.ui.Theme;
 
 /**
@@ -13,7 +13,7 @@ public abstract class ValueElement<I, T> extends BaseElement<T> {
 
     private I value;
 
-    public ValueElement(Style style, Theme theme, int column, int row, T defaultVal, InputMapper<I, T> mapper) {
+    public ValueElement(Alignment style, Theme theme, int column, int row, T defaultVal, InputMapper<I, T> mapper) {
         super(style, theme, column, row);
         this.value = mapper.convert(defaultVal);
         this.defaultVal = mapper.map(mapper.convert(defaultVal));

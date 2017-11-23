@@ -23,6 +23,8 @@ public @interface Theme {
 
     int highlight() default UNDEFINED;
 
+    Animation animation() default @Animation;
+
     Theme DEFAULT = new Theme() {
 
         @Override
@@ -58,6 +60,11 @@ public @interface Theme {
         @Override
         public int highlight() {
             return 0x66C2185B;
+        }
+
+        @Override
+        public Animation animation() {
+            return Animation.DEFAULT;
         }
     };
 }

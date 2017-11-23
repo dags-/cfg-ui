@@ -1,6 +1,6 @@
 package me.dags.ui.layout;
 
-import me.dags.ui.Style;
+import me.dags.ui.Alignment;
 import me.dags.ui.Theme;
 import me.dags.ui.element.BaseElement;
 import me.dags.ui.element.Element;
@@ -19,7 +19,7 @@ public abstract class BaseLayout<T> extends BaseElement<T> {
     private int columns = 0;
     private int rows = 0;
 
-    public BaseLayout(Style style, Theme theme) {
+    public BaseLayout(Alignment style, Theme theme) {
         super(style, theme, 0, 0);
     }
 

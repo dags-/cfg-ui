@@ -1,6 +1,6 @@
 package me.dags.ui.element;
 
-import me.dags.ui.Style;
+import me.dags.ui.Alignment;
 import me.dags.ui.Theme;
 import me.dags.ui.platform.RenderContext;
 
@@ -9,7 +9,7 @@ import me.dags.ui.platform.RenderContext;
  */
 public class LabelElement implements Element<String> {
 
-    private final Style style;
+    private final Alignment style;
     private final Theme theme;
     private final int column;
     private final int row;
@@ -20,7 +20,7 @@ public class LabelElement implements Element<String> {
     private int width = 0;
     private int height = 0;
 
-    public LabelElement(Style style, Theme theme, String label, int col, int row, Element<?> value) {
+    public LabelElement(Alignment style, Theme theme, String label, int col, int row, Element<?> value) {
         this.format = label;
         this.value = value;
         this.style = style;
@@ -77,7 +77,7 @@ public class LabelElement implements Element<String> {
     }
 
     @Override
-    public Style getStyle() {
+    public Alignment getStyle() {
         return style;
     }
 

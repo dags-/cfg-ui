@@ -1,6 +1,6 @@
 package me.dags.ui.element;
 
-import me.dags.ui.Style;
+import me.dags.ui.Alignment;
 import me.dags.ui.Theme;
 import me.dags.ui.platform.RenderContext;
 
@@ -9,7 +9,7 @@ import me.dags.ui.platform.RenderContext;
  */
 public abstract class BaseElement<T> implements Element<T> {
 
-    private final Style style;
+    private final Alignment style;
     private final Theme theme;
     private final int column;
     private final int row;
@@ -24,7 +24,7 @@ public abstract class BaseElement<T> implements Element<T> {
     private int containerWidth;
     private int containerHeight;
 
-    public BaseElement(Style style, Theme theme, int column, int row) {
+    public BaseElement(Alignment style, Theme theme, int column, int row) {
         this.style = style;
         this.theme = theme;
         this.column = column;
@@ -62,7 +62,7 @@ public abstract class BaseElement<T> implements Element<T> {
     }
 
     @Override
-    public Style getStyle() {
+    public Alignment getStyle() {
         return style;
     }
 
